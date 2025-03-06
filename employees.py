@@ -72,7 +72,7 @@ class Employee(ABC):
         if value >= 0:
             self.__salary = value
         else:
-            raise ValueError('SALARY_ERROR_MESSAGE')
+            raise ValueError(SALARY_ERROR_MESSAGE)
 
     @property
     def performance(self):
