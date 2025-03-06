@@ -168,7 +168,7 @@ class TemporaryEmployee(Employee):
         super().interact(self)
         if other == self.manager:
             if other.happiness > HAPPINESS_THRESHOLD and \
-                self.performance >= TEMP_EMPLOYEE_PERFORMANCE_THRESHOLD:
+            self.performance >= TEMP_EMPLOYEE_PERFORMANCE_THRESHOLD:
                 self.savings += MANAGER_BONUS
             if other.happiness <= HAPPINESS_THRESHOLD:
                 self.salary //= 2
@@ -184,14 +184,14 @@ class PermanentEmployee(Employee):
     def work(self):
         change = random.randint(-10, 10)
         self.performance += change
-        if change >= 1:
+        if change >= 0:
             self.happiness += 1
 
     def interact(self, other):
         super().interact(self)
         if other == self.manager:
             if other.happiness > HAPPINESS_THRESHOLD and \
-                self.performance >= PERM_EMPLOYEE_PERFORMANCE_THRESHOLD:
+            self.performance >= PERM_EMPLOYEE_PERFORMANCE_THRESHOLD:
                 self.savings += MANAGER_BONUS
             elif other.happiness <= HAPPINESS_THRESHOLD:
                 self.happiness -= 1
